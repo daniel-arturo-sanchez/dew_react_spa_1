@@ -1,13 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Curso() {
+  const navegar = useNavigate();
   return (
     <>
      <h1>Curso: 2º de DAW A 24/25</h1>
-     <Link to="/">Ir al inicio</Link>
+     {/* <Link to="/">Ir al inicio</Link> */}
+     <button onClick={(e) => navegar('/')}>Añadir registro</button>
     </>
   )
 }
 
-export default Curso
+export default Curso;

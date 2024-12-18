@@ -76,3 +76,13 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
+
+li {
+  text-align: left;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

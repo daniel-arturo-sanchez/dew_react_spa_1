@@ -7,6 +7,9 @@ import Inicio from './Inicio.jsx';
 import Centro from './Centro.jsx';
 import Ciclo from './Ciclo.jsx';
 import Curso from './Curso.jsx';
+import Layoutlet from './Layoutlet.jsx';
+import Daw2 from './Daw2.jsx';
+import Grupo from './Grupo.jsx';
 
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
@@ -14,11 +17,15 @@ createRoot(document.getElementById('root')).render(
   // </StrictMode>,
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Inicio />}></Route>
-      <Route path="/curso" element={<Curso />}></Route>
-      <Route path="/ciclo" element={<Ciclo />}></Route>
-      <Route path="/centro" element={<Centro />}></Route>
-      <Route path="*" element={<Navigate to="/" replace="true" />}></Route>
+      <Route path="/" element={<Layoutlet />}>
+        <Route index element={<Inicio />}></Route>
+        <Route path="/ciclo" element={<Ciclo />}></Route>
+        <Route path="/centro" element={<Centro />}></Route>
+        <Route path="/curso" element={<Curso />}></Route>
+        <Route path="/daw2" element={<Daw2 />}></Route>
+        <Route path="/grupo/:letra" element={<Grupo />}></Route>
+        <Route path="*" element={<Navigate to="/" replace="true" />}></Route>
+      </Route>
     </Routes>
   </BrowserRouter>
 )
