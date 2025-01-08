@@ -10,6 +10,17 @@ import Curso from './Curso.jsx';
 import Layoutlet from './Layoutlet.jsx';
 import Daw2 from './Daw2.jsx';
 import Grupo from './Grupo.jsx';
+import Add from './Add.jsx'
+
+const alumnos = [
+  {id: 1, grupo:"A", nombre: "Juan"},
+  {id: 2, grupo:"A", nombre: "Eva"},
+  {id: 3, grupo:"B", nombre: "Ana"},
+  {id: 4, grupo:"B", nombre: "Julia"},
+  {id: 5, grupo:"B", nombre: "Antonio"},
+];    
+
+const grupos = ["A","B"];
 
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
@@ -24,6 +35,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/curso" element={<Curso />}></Route>
         <Route path="/daw2" element={<Daw2 />}></Route>
         <Route path="/grupo/:letra" element={<Grupo />}></Route>
+        <Route path="/add" element={<Add grupos={grupos} />}></Route>
         <Route path="*" element={<Navigate to="/" replace="true" />}></Route>
       </Route>
     </Routes>

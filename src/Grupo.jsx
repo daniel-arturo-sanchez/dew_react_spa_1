@@ -2,11 +2,11 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const alumnos = [
-    {grupo:"A", nombre: "Juan"},
-    {grupo:"A", nombre: "Eva"},
-    {grupo:"B", nombre: "Ana"},
-    {grupo:"B", nombre: "Julia"},
-    {grupo:"B", nombre: "Antonio"},
+    {id: 1, grupo:"A", nombre: "Juan"},
+    {id: 2, grupo:"A", nombre: "Eva"},
+    {id: 3, grupo:"B", nombre: "Ana"},
+    {id: 4, grupo:"B", nombre: "Julia"},
+    {id: 5, grupo:"B", nombre: "Antonio"},
 ];    
 
 

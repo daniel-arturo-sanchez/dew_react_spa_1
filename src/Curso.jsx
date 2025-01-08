@@ -7,7 +7,7 @@ function Curso() {
     <>
      <h1>Curso: 2º de DAW A 24/25</h1>
      {/* <Link to="/">Ir al inicio</Link> */}
-     <button onClick={(e) => navegar('/')}>Añadir registro</button>
+     <button onClick={(e) => navegar('/add')}>Añadir registro</button>
     </>
   )
 }

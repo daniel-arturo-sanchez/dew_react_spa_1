@@ -86,3 +86,11 @@ ul{
   flex-direction: column;
   gap: 1em;
 }
+
+form{
+  display: flex;
+  flex-direction: column;
+  label{
+    text-align: left;
+  }
+}
