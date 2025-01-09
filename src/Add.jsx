@@ -1,7 +1,7 @@
 import React from 'react'
 import './FrmPersona.css';
 
-function Add({grupos}) {
+function Add({grupos, addAlumno}) {
   return (
     <form id="myForm"> 
         <label htmlFor="id">id:</label>
@@ -12,7 +12,11 @@ function Add({grupos}) {
         <select name="grupo" id="grupo" required>
             { grupos.map( (grupo,i) => <option key={`${i}+${grupo}`} value={grupo}>{grupo}</option>)}
         </select>
-        <button type="submit" onClick={ (e) => e.preventDefault()}>Añadir</button>
+        <button type="submit" onClick={ (e) => {
+          let formulario = document.getElementById('myForm');
+          e.preventDefault()
+          addAlumno({id:formulario.id.value, grupo:formulario.grupo.value, nombre:formulario.nombre.value});
+        }}>Añadir</button>
     </form>
   )
 }

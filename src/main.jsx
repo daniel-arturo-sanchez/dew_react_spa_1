@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Contenedor from './Contenedor.jsx'
@@ -11,8 +11,12 @@ import Layoutlet from './Layoutlet.jsx';
 import Daw2 from './Daw2.jsx';
 import Grupo from './Grupo.jsx';
 import Add from './Add.jsx'
+import Alumnos from './Alumnos.jsx';
+import Edit from './Edit.jsx';
+import Delete from './Delete.jsx';
+import React from 'react';
 
-const alumnos = [
+let alumnado = [
   {id: 1, grupo:"A", nombre: "Juan"},
   {id: 2, grupo:"A", nombre: "Eva"},
   {id: 3, grupo:"B", nombre: "Ana"},
@@ -35,7 +39,10 @@ createRoot(document.getElementById('root')).render(
         <Route path="/curso" element={<Curso />}></Route>
         <Route path="/daw2" element={<Daw2 />}></Route>
         <Route path="/grupo/:letra" element={<Grupo />}></Route>
-        <Route path="/add" element={<Add grupos={grupos} />}></Route>
+        <Route path="/alumnos" element={<Alumnos alumnos={alumnado} />}></Route>
+        <Route path="/alumnos/add" element={<Add grupos={grupos} />}></Route>
+        <Route path="/alumnos/edit/:id" element={<Edit alumnos={alumnado} grupos={grupos} />}></Route>
+        <Route path="/alumnos/delete/:id" element={<Delete alumnos={alumnado} />}></Route>
         <Route path="*" element={<Navigate to="/" replace="true" />}></Route>
       </Route>
     </Routes>
