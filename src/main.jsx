@@ -39,7 +39,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/curso" element={<Curso />}></Route>
         <Route path="/daw2" element={<Daw2 />}></Route>
         <Route path="/grupo/:letra" element={<Grupo />}></Route>
-        <Route path="/alumnos" element={<Alumnos alumnos={alumnado} />}></Route>
+        <Route path="/alumnos" element={<Alumnos alumnos={alumnado} grupos={grupos} />}></Route>
         <Route path="/alumnos/add" element={<Add grupos={grupos} />}></Route>
         <Route path="/alumnos/edit/:id" element={<Edit alumnos={alumnado} grupos={grupos} />}></Route>
         <Route path="/alumnos/delete/:id" element={<Delete alumnos={alumnado} />}></Route>
