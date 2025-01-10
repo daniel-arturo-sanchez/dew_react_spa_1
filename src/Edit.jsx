@@ -21,7 +21,7 @@ function Edit({grupos, alumnos, editAlumno}) {
               let formulario = document.getElementById('myForm');
               e.preventDefault()
               editAlumno({id:parseInt(id), grupo:formulario.grupo.value, nombre:formulario.nombre.value});
-            }}>Añadir</button>
+            }}>Actualizar</button>
       </form>
    </> 
 
