@@ -1,7 +1,9 @@
 import React from 'react'
 import './FrmPersona.css';
+import { useNavigate } from 'react-router-dom';
 
 function Add({grupos, addAlumno}) {
+  const navegar = useNavigate();
   return (
     <form id="myForm"> 
         <label htmlFor="id">id:</label>
@@ -15,7 +17,12 @@ function Add({grupos, addAlumno}) {
         <button type="submit" onClick={ (e) => {
           let formulario = document.getElementById('myForm');
           e.preventDefault()
-          addAlumno({id:formulario.id.value, grupo:formulario.grupo.value, nombre:formulario.nombre.value});
+          if(formulario.checkValidity()) {
+            addAlumno({id:formulario.id.value, grupo:formulario.grupo.value, nombre:formulario.nombre.value}); 
+            navegar('/alumnos');
+          } else {
+            alert(formulario.id.validationMessage || formulario.nombre.validationMessage)
+          }
         }}>Añadir</button>
     </form>
   )

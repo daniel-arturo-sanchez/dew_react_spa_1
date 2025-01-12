@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './index.css'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Inicio from './Inicio.jsx';
 import Centro from './Centro.jsx';
 import Ciclo from './Ciclo.jsx';
@@ -23,38 +23,39 @@ let alumnado = [
 
 const grupos = ["A","B"];
 
+
 function App() {
     const [numAlumnos, setNumAlumnos] = useState(alumnado.length);
 
     function validateId(id){
-        let response = alumnos.findIndex(alumno => alumno.id == id);
+        let response = alumnado.findIndex(alumno => alumno.id == id);
         return response == -1
     }
     
     function addAlumno(alumno){
         if(validateId(alumno.id)){
-            alumnos.push(alumno);
-            setNumAlumnos(alumnos.length);
+            alumnado.push(alumno);
+            setNumAlumnos(alumnado.length);      
         } else {
             alert("Id inválido")
         }     
     }
     
     function editAlumno(alumno){
-        let alumnoIdEdit = alumnos.findIndex(alumn => alumn.id == alumno.id);
+        let alumnoIdEdit = alumnado.findIndex(alumn => alumn.id == alumno.id);
         if(alumnoIdEdit !== -1){
-            alumnos.splice(alumno.id,1,alumno);
-            setNumAlumnos(alumnos.length);
+            alumnado.splice(alumnoIdEdit,1,alumno);
+            setNumAlumnos(alumnado.length);
         } else {
             alert("No existe un alumno con ese id")
         }     
     }
     
     function deleteAlumno(id){
-        let alumnoIdDelete = alumnos.findIndex(alumn => alumn.id == id);
+        let alumnoIdDelete = alumnado.findIndex(alumn => alumn.id == id);
         if(alumnoIdDelete !== -1){
-            alumnos.splice(alumnoIdDelete,1);
-            setNumAlumnos(alumnos.length);
+            alumnado.splice(alumnoIdDelete,1);
+            setNumAlumnos(alumnado.length);
         } else {
             alert("No existe un alumno con ese id")
         }  
